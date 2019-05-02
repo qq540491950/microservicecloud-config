@@ -1,35 +1,30 @@
-﻿spring: 
+﻿spring:
   profiles:
     active:
-    - dev
---- 
+      - dev
+---
 server:
   port: 8001
-
 spring:
   profiles: dev
   application:
-    name: microservicecloud-dept
+    name: microservicecloud-config-dept-client
   datasource:
-    # mysql驱动包
     driver-class-name: com.mysql.cj.jdbc.Driver
-    # 数据库名称
-    url: jdbc:mysql://localhost:3306/cloudDB01?serverTimezone=UTC
-    username: root
-    password: 123456
+      url: jdbc:mysql://127.0.0.1:3306/cloudDB01?serverTimezone=UTC
+      username: root
+      password: 123456
 
 mybatis:
-  # 所有Entity别名类所在包
   type-aliases-package: com.lirt.springcloud.entity
-  # mapper映射文件
   mapper-locations: classpath:mapper/*.xml
 
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://127.0.0.1:7001/eureka
   instance:
-    instance-id: microservicecloud-dept8001
+    instance-id: dept-8001.com
     prefer-ip-address: true
 
 info:
@@ -47,32 +42,26 @@ logging:
 ---
 server:
   port: 8001
-
-
 spring:
   profiles: test
   application:
-    name: microservicecloud-dept
+    name: microservicecloud-config-dept-client
   datasource:
-    # mysql驱动包
     driver-class-name: com.mysql.cj.jdbc.Driver
-    # 数据库名称
-    url: jdbc:mysql://localhost:3306/cloudDB01?serverTimezone=UTC       
-    username: root
-    password: 123456
+      url: jdbc:mysql://127.0.0.1:3306/cloudDB01?serverTimezone=UTC
+      username: root
+      password: 123456
 
 mybatis:
-  # 所有Entity别名类所在包
   type-aliases-package: com.lirt.springcloud.entity
-  # mapper映射文件
   mapper-locations: classpath:mapper/*.xml
 
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://127.0.0.1:7001/eureka
   instance:
-    instance-id: microservicecloud-dept8001
+    instance-id: dept-8001.com
     prefer-ip-address: true
 
 info:
