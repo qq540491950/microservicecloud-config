@@ -27,11 +27,7 @@ eureka:
     instance-id: dept-8001.com
     prefer-ip-address: true
 
-info:
-  app.name: lirt-microservicecloud8001
-  company.name: www.lirt.com
-  build.artifactId: @project.artifactId@
-  build.version: @project.version@
+
 # 打印sql
 logging:
   level:
@@ -64,11 +60,7 @@ eureka:
     instance-id: dept-8001.com
     prefer-ip-address: true
 
-info:
-  app.name: lirt-microservicecloud8001
-  company.name: www.lirt.com
-  build.artifactId: @project.artifactId@
-  build.version: @project.version@
+
 # 打印sql
 logging:
   level:
